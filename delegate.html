@@ -6,6 +6,13 @@
   <meta name='description' content='Delegate Steem Power.'>
   <meta name='keywords' content='steem, steemit, blockchain, cryptocurrency, steempower, sp, vests, fbslo'>
   <meta name='refresh' content='22th April 2018, 18:57 CET'>
+  
+  //Lower case letters.
+   <script>function forceLower(strInput) 
+{
+strInput.value=strInput.value.toLowerCase();
+}</script>
+  
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   <style type="text/css">
   .form-style-8{
@@ -89,8 +96,8 @@
 <div class="form-style-8">
   <h2><center>Delegate Steem Power</center></h2>
   <form>
-    <input type="text" id="delegator" placeholder="Delegator (e.g. fbslo)" />
-    <input type="text" id="delegatee" placeholder="Delegatee (e.g. minnowsupport)" />
+    <input type="text" id="delegator" onkeyup="return forceLower(this);" placeholder="Delegator (e.g. fbslo)" />
+    <input type="text" id="delegatee" onkeyup="return forceLower(this);" placeholder="Delegatee (e.g. minnowsupport)" />
     <input type="text" id="amount" placeholder="Amount (e.g. 1000 / 0 to undelegate)" />
     <select id="currency">
     <option value="null">Steem Power or Vests?</option>
