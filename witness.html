@@ -3,6 +3,10 @@
   <title>Vote For Witness</title>
   <!--Created by @fbslo -->
   <meta name='Author' content='@fbslo'>
+   <script>function forceLower(strInput) 
+{
+strInput.value=strInput.value.toLowerCase();
+}</script>
   <meta name='description' content='Vote for witness'>
   <meta name='keywords' content='steem, steemit, blockchain, cryptocurrency, STEEM, fbslo'>
   <meta name='refresh' content='22th April 2018, 19:12 CET'>
@@ -89,8 +93,8 @@
 <div class="form-style-8">
   <h2><center>Vote For Witness</center></h2>
   <form>
-    <input type="text" id="account" placeholder="Account (optional)" />
-    <input type="text" id="witness" placeholder="Witness (e.g. fbslo)" />
+    <input type="text" id="account" onkeyup="return forceLower(this);" placeholder="Account (optional)" />
+    <input type="text" id="witness" onkeyup="return forceLower(this);" placeholder="Witness (e.g. fbslo)" />
     <select id="approve">
     <option value="null">Approve or Unapprove</option>
     <option value="false">Unapprove</option>
