@@ -4,6 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Reputation</title>
+	    <script>function forceLower(strInput) 
+{
+strInput.value=strInput.value.toLowerCase();
+}</script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900" rel="stylesheet">
@@ -132,7 +136,7 @@ input {
 				<div class="row mb-0">
 					<div class="col-sm-8 ml-auto mr-auto">
 						<div class="form-group">
-							<input class="form-control" name="username" type="text" v-model.lazy="user" placeholder="Username">
+							<input class="form-control" name="username" onkeyup="return forceLower(this);" type="text" v-model.lazy="user" placeholder="Username">
 							<label for="username">
                 <!-- button-->
             <input type="button" value="Get Reputation" id='button'/>
