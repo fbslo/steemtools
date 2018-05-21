@@ -3,6 +3,10 @@
 <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
 <title>Create a Post</title>
 <meta name='Author' content='@fbslo'>
+     <script>function forceLower(strInput) 
+{
+strInput.value=strInput.value.toLowerCase();
+}</script>
 <meta name='description' content='Create Post'>
 <meta name='keywords' content='steem, steemit, blockchain, cryptocurrency, post, fbslo'>
 <meta name='refresh' content='22th April 2018, 18:57 CET'>
@@ -120,7 +124,7 @@ function postArticle()
 <div class="form-style-8">
   <h2><center>Create a Post on the STEEM Blockchain</center></h2>
   <form>
-    <input type="text" id="account" placeholder="Account (e.g. fbslo)" />
+    <input type="text" id="account" onkeyup="return forceLower(this);" placeholder="Account (e.g. fbslo)" />
     <input type="text" id="key" placeholder="Private Posting Key" />
     <input type="text" id="permlink" placeholder="Unique Permlink (e.g. my-post-title)" />
     <input type="text" id="title" placeholder="Title" />
