@@ -4,6 +4,10 @@
   <!--Created by @fbslo -->
   <meta name='Author' content='@fbslo'>
   <meta name='description' content='Transfer STEEM/SBD.'>
+   <script>function forceLower(strInput) 
+{
+strInput.value=strInput.value.toLowerCase();
+}</script>
   <meta name='keywords' content='steem, steemit, blockchain, cryptocurrency, STEEM, SBD, steemdollars, fbslo'>
   <meta name='refresh' content='22th April 2018, 19:12 CET'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
@@ -89,8 +93,8 @@
 <div class="form-style-8">
   <h2><center>Transfer STEEM or SBD</center></h2>
   <form>
-    <input type="text" id="youraccount" placeholder="From (e.g. fbslo)" />
-    <input type="text" id="recipient" placeholder="To (e.g. steem)" />
+    <input type="text" id="youraccount" onkeyup="return forceLower(this);" placeholder="From (e.g. fbslo)" />
+    <input type="text" id="recipient" onkeyup="return forceLower(this);" placeholder="To (e.g. steem)" />
     <input type="text" id="amount" placeholder="Amount (e.g. 1000)" />
     <select id="currency">
     <option value="null">Currency</option>
