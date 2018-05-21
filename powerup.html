@@ -4,6 +4,10 @@
   <!--Created by @fbslo -->
   <meta name='Author' content='@fbslo'>
   <meta name='description' content='Power Up'>
+   <script>function forceLower(strInput) 
+{
+strInput.value=strInput.value.toLowerCase();
+}</script>
   <meta name='keywords' content='steem, steemit, blockchain, cryptocurrency, STEEM, fbslo'>
   <meta name='refresh' content='22th April 2018, 19:12 CET'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
@@ -89,8 +93,8 @@
 <div class="form-style-8">
   <h2><center>Power Up Steem</center></h2>
   <form>
-    <input type="text" id="from" placeholder="From (optional)" />
-    <input type="text" id="to" placeholder="To (e.g. fbslo)" />
+    <input type="text" id="from" onkeyup="return forceLower(this);" placeholder="From (optional)" />
+    <input type="text" id="to" onkeyup="return forceLower(this);" placeholder="To (e.g. fbslo)" />
     <input type="text" id="amount" placeholder="Amount in Steem (e.g. 100)" />
     <center><input type="button" value="Power Up" id='button'/></center>
   </form>
