@@ -1,0 +1,38 @@
+<html>
+<head>
+<script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+<title>Claim Rewards</title>
+<link rel="stylesheet" type="text/css" href="http://fbslo.net/css.css">
+<meta name='Author' content='@fbslo'>
+</head>
+<body>
+
+  <div class="slidecontainer">
+<div class="form-style-8">
+  <h2><center>Claim Rewards</center></h2>
+  <form>
+    <input type="text" id="account" placeholder="Account (e.g. fbslo)" />
+    <input type="text" id="key" placeholder="Private Posting Key" />
+    <center><input type="button" value="Claim Rewards"  onClick='claim()'/></center>
+  </form>
+</div>
+
+
+<script>
+function claim(){
+steem.api.getAccounts([document.getElementById('account').value], function(err, result){
+    console.log(err, result)
+    let sbdReward = result[0].reward_sbd_balance
+    let steemReward = result[0].reward_steem_balance
+    let steemPowerInVests = result[0].reward_vesting_balance
+
+    steem.broadcast.claimRewardBalance(document.getElementById('key').value, document.getElementById('account').value, steemReward, sbdReward, steemPowerInVests, function(err, result) {
+      alert(err, result);
+    });
+})
+}
+</script>
+
+
+</body>
+</html>

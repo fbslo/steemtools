@@ -1,0 +1,51 @@
+<html>
+<head>
+<script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+<title>Withdraw Vesting Route</title>
+<link rel="stylesheet" type="text/css" href="http://fbslo.net/css.css">
+<meta name='Author' content='@fbslo'>
+
+</head>
+<body>
+
+  <div class="slidecontainer">
+<div class="form-style-8">
+  <h2><center>Set Withdraw Vesting Route</center></h2>
+  <form>
+    <input type="text" id="account" placeholder="From Account (e.g. fbslo)" />
+    <input type="text" id="key" placeholder="ACTIVE KEY" />
+    <input type="text" id="to" placeholder="To Account (e.g. minnowsupport)" />
+    <input type="text" id="percent" placeholder="Percent (10000 = 100%)" />
+    <select id="vest">
+    <option value="null">Power up to  another account?</option>
+    <option value="false">NO</option>
+    <option value="true">YES</option>
+    </select>
+    <center><input type="button" value="Set Withdraw Vesting Route"  onClick='set()'/></center>
+  </form>
+</div>
+
+<script>
+
+function set(){
+
+var fromAccount = document.getElementById("account").value;
+var wif = document.getElementById("key").value;
+var toAccount = document.getElementById('to').value;
+var autoVest = document.getElementById("vest").value;
+var percent = parseInt(document.getElementById("percent").value);
+
+
+steem.broadcast.setWithdrawVestingRoute(wif, fromAccount, toAccount, percent, autoVest, function(err, result) {
+  if (err)
+    alert('Failure! ' + err);
+  else
+    alert('Success!');
+});
+}
+
+</script>
+
+
+</body>
+</html>
